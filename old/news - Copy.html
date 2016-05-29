@@ -1,0 +1,372 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>News</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<style type="text/css">
+			
+			@font-face {
+				font-family: 'noto_sansregular';
+				src: url('fonts/NotoSans-Regular-webfont.eot');
+				src: url('fonts/NotoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/NotoSans-Regular-webfont.woff') format('woff'),
+					 url('fonts/NotoSans-Regular-webfont.ttf') format('truetype'),
+					 url('fonts/NotoSans-Regular-webfont.svg#noto_sansregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-family: sans-serif;
+				color: #505050;
+				background-color: white;
+			}
+			
+			#banner {
+				height: 200px;
+				
+				background: linear-gradient(
+					to bottom,
+					darkblue 0%,
+					darkblue 23%,
+					dodgerblue 23%,
+					dodgerblue 100%);
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#earth {
+				position: absolute;
+				left: 64vw;
+				width: 32vw;
+				top: calc(50% - 11vw); /* 11 = 16(half of 32) - 5 */
+			}
+			
+			.barcolor {
+				position: absolute;
+				height: 46px;
+				width: 100%;
+				background-color: darkblue;
+				opacity: 0.6;
+				z-index: 1;
+			}
+			
+			.insidebar {
+				height: 100%;
+			}
+			
+			#fixedwidth {
+				max-width: 1024px;
+				margin: 0 auto;
+				position: relative;
+				top: -200px;
+			}
+			
+			#bannersection{
+				color: white;
+				min-height: 200px;
+				position: relative;
+			}
+			
+			#bannercolor {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				background-color: dodgerblue;
+				z-index: -1;
+			}
+			
+			#topbar {
+				font-weight: bold;
+				float: left;
+				width: 100%;
+				position: relative;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#toplogo li {
+				float: left;
+				background-color: white;
+				margin: 9.2px 1.5px;
+				color: darkblue;
+				font-size: 1.3em;
+				padding: 0 8px ;
+				text-align: center;
+			}
+			
+			#toplogo ul {
+				padding: 0 15px 0 2.45vw;
+				float: left;
+				position: relative;
+				z-index: 3;
+				font-family: noto_sansregular;
+			}
+			
+			#topmenu li {
+				float: left;
+				display: inline;
+				border-left: 1px solid darkslateblue;
+				font-size: 0.87em ;
+				padding-top: calc(22px - 0.5em);
+			}
+			
+			.item {
+				opacity: 1 !important;
+			}
+			
+			#topmenu ul {
+				position: relative;
+				z-index: 3;
+				float: right;
+			}
+			
+			#topmenu input {
+				font-weight: bold;
+				border: none;
+				padding: 7px;
+				position: relative;
+				top: -7px;
+			}
+			
+			#search {
+				padding: 0 14px 2px 14px;
+			}
+			
+			[class^="item__"] {
+				padding: 0 14px calc(22px - 0.5em) 14px;
+			}
+			
+			[class^="item__"]:hover {
+				padding-bottom: calc(17px - 0.5em);
+				border-bottom: 5px solid;
+			}
+			
+			.item__1:hover {
+				border-color: red;
+			}
+			
+			.item__2:hover {
+				border-color: orange;
+			}
+			
+			.item__3:hover {
+				border-color: yellow;
+			}
+			
+			.item__4:hover {
+				border-color: green;
+			}
+			
+			.item__5:hover {
+				border-color: blue;
+			}
+			
+			.item__6:hover {
+				border-color: mediumvioletred;
+			}
+			
+			.item__7:hover {
+				border-color: violet;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+			#titlediv {
+				font-family: noto_sansregular;
+				position: absolute;
+				bottom:0;
+				padding-left: 2.45vw;
+				z-index: 5;
+			}
+			
+			#titlediv h1 {
+				font-size: 7vw;
+				font-weight: lighter;
+			}
+			
+			#titlediv span {
+				font-size: 0.5em;
+				position: relative;
+				left: -1vw;
+			}
+			
+			#submenu ul {
+				float: right;
+				background-color: #3E0C0D;
+				color: black;
+				font-weight: bold;
+				font-size: 0.8em;
+				max-width: 512px;
+				padding: 0 7px 0 33px;
+				margin-bottom: 3.5px;
+				background: linear-gradient(
+					to left,
+					#FFFFFF 0%,
+					rgba(0, 0, 0, 0.33) 50%,
+					#FFFFFF 100%);
+			}
+			
+			#submenu li {
+				float: left;
+				padding: 0 6px;
+				margin: 4px 0;
+				border-right: 1px solid grey;
+			}
+			
+			#lastcontinent {
+				border: none !important;
+			}
+			
+			#lastupdate {
+				font-size: 0.85em;
+				padding-top: 4.3px;
+				margin-left: 2.45vw;
+				float: left;
+			}
+			
+			#mainstorysection {
+				float: left;
+				max-width: 681px;
+				margin-left: 2.45vw;
+			}
+			
+			.story {
+				border-bottom: 1px solid grey;
+				padding: 15px 15px 15px 0;
+				float: left;
+			}
+			
+			.story img{
+				width: 43%;
+				min-width: 240px;
+				margin-top: 15px;
+				float: left;
+			}
+			
+			.story p {
+				display: inline-block;
+				float: left;
+				margin: 15px 0 0 15px;
+			}
+			
+			#sidestorysection {
+				float: right;
+				max-width: 240px;
+				margin-top: 12px;
+				position: relative;
+				margin-right: 14px;
+			}
+			
+			.sidestory {
+				float: left;
+				margin: 15px 0;
+			}
+			
+			.sidestory img {
+				max-width: 240px;
+				margin-top: 18px;
+			}
+			
+			.gossip {
+				font-size: 0.8em;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="banner">
+				<img id="earth" src="images/globe.svg" alt="earth" />
+					<div class="barcolor"></div>
+			</div>
+			<div id="fixedwidth">
+				<div id="bannersection">
+					<div id="bannercolor"></div>
+					<div id="topbar">
+						<div class="barcolor insidebar"></div>
+						<div id="toplogo">
+							<ul>
+								<li>N</li><li>E</li><li>W</li><li>S</li>
+							</ul>
+						</div>
+						<div id="topmenu">
+							<ul>
+								<li><div class="item__1">News</div></li>
+								<li><div class="item__2">Sport</div></li>
+								<li><div class="item__3">Weather</div></li>
+								<li><div class="item__4">Earth</div></li>
+								<li><div class="item__5">TV</div></li>
+								<li><div class="item__6">Radio</div></li>
+								<li><div class="item__7">More...</div></li>
+								<li id="search"><input placeholder="Search" /></li>
+							</ul>
+						</div>
+					</div>
+					<div class="break"></div>
+					<br />
+					<div id="titlediv">
+						<h1>WORLD&nbsp;<span>NEWS</span></h1>
+					</div>
+				</div>
+				<div id="submenu">
+					<ul>
+						<li>Asia</li>
+						<li>Africa</li>
+						<li>N. America</li>
+						<li>S. America</li>
+						<li>Antarctica</li>
+						<li>Europe</li>
+						<li id="lastcontinent">Australia</li>
+					</ul>
+				</div>
+				<div id="lastupdate">
+					<p><b>7 April 2015</b> Last updated at 16:35 GMT</p>
+				</div>
+				<div class="break"></div>
+				<div id="mainstorysection">
+					<div class="story">
+						<h1>Man caught eating unprocessed food!!</h1>
+						<img src="images/grapes.jpg" alt="grapes" />
+						<p>t</p>
+					</div>
+					<div class="break"></div>
+					<div class="story">
+						<h2>Scientist gets writer's block before publishing breakthrough</h2>
+						<img src="images/writing.jpg" alt="writing" />
+						<p>t</p>
+					</div>
+				</div>
+				<div id="sidestorysection">
+					<div class="sidestory">
+						<h3>Entertainment</h3>
+						<img src="images/vehicle.jpg" alt="vistim's car" />
+						<p><b>Famous celebrity found free of all charges</b></p>
+						<p class="gossip">A famous celebrity who killed a man, stole his car, and then posted about it on facebook, has been freed of all charges. The jury unanimously decided to drop all charges against her on condition that she supply all of them with a copy of her latest album.</p>
+					</div>
+					<div class="break"></div>
+					<hr />
+					<div class="sidestory">
+						<h3>Environment</h3>
+						<img src="images/ocean.jpg" alt="ocean" />
+						<p><b>The oceans are full of water!!</b></p>
+						<p class="gossip">Earlier today, a man dropped his phone while he was walking by the beach. When he reached to pick up his phone, he accidentally looked up and noticed that the oceans were full of what seemed like water!! The stunning discovery has left everyone baffled!! Researchers are Googling the issue to find out more.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

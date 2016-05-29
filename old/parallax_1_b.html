@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	
+	<head>
+		<title>Parallax</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		
+		<style>
+			.parallax {
+				perspective: 5px;
+				height: 100vh;
+				overflow-x: hidden;
+				overflow-y: auto;	
+				perspective-origin-x: 100%;
+			}
+			
+			.parallax__layer {
+				position: absolute;
+				top: 0;
+				right: 0;
+				
+				left: 0;
+				transform-origin-x: 100%;
+			}
+			
+			.parallax__layer--base {
+				transform: translateZ(0);
+				background-color: aqua;
+				bottom: 20vh;
+			}
+			
+			.parallax__layer--back {
+				transform: translateZ(-5px) scale(2);
+				background-color: black;
+				bottom: 0;
+				position: absolute;
+				text-align: center;
+			}
+			
+			.parallax__group {
+				position: relative;
+				height: 100vh;
+				transform-style: preserve-3d;
+			}
+			
+			#grp2 {
+				background-color: burlywood;
+				position: relative;
+				transform: translateZ(0);
+			}
+			
+			/*---------------------------------*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font: 100% / 1.5 Arial;
+			}
+			
+			.parallax {
+				font-size: 200%;
+			}
+			
+			/* .parallax__layer {
+				padding: 100vh 0;
+			} */
+			/* ^This is not necessary */
+			
+			.title {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			#neuro {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 100vh;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<div class="parallax">
+			<div id="grp1" class="parallax__group">
+				<div class="parallax__layer parallax__layer--back">
+				
+						<img id="neuro" src="images/neurons.jpg" alt="neurons"  />
+					
+				</div>
+
+
+				<div class="parallax__layer parallax__layer--base">
+					<div class="title">BASE</div>
+				</div>
+			</div>
+			
+			<div id="grp2" class="parallax__group">
+				<div class="title">GROUP 2</div>
+			</div>
+		</div>
+		<script>
+			var x=window.innerWidth;
+			var y=window.innerHeight;
+			if(y>x) {
+				document.getElementById("neuro").style.height="100vh";
+			} else {
+				document.getElementById("neuro").style.width="100vw";
+			}
+		</script>
+	</body>
+	
+</html>

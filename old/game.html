@@ -1,0 +1,240 @@
+<!doctype html>
+<!-- bismillaah -->
+<html>
+	<head>
+		<title>Memory Game</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			@font-face {
+				font-family: 'pleasantly_plumpnormal';
+				src: url('fonts/PLUMP-webfont.eot');
+				src: url('fonts/PLUMP-webfont.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/PLUMP-webfont.woff') format('woff'),
+					 url('fonts/PLUMP-webfont.ttf') format('truetype'),
+					 url('fonts/PLUMP-webfont.svg#pleasantly_plumpnormal') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+			
+			body {
+				background-color: cornflowerblue;
+				font-family: 'pleasantly_plumpnormal';
+				margin: 0;
+				font-weight: lighter;
+			}
+			
+			#container {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				text-align: center;
+			}
+			
+			#textdiv{
+				color: black;
+				font-size:2.75em
+			}
+			
+			h1 {
+				color: white;
+				font-size: 6.75vw;
+				text-shadow: -0.5vw 0.5vw 0.5vw black;
+				font-weight: lighter;
+				margin: 0;
+				padding-top: 0.4em;
+			}
+			
+			#textdiv p{
+				margin: 0.25em 0 calc(0.25em - 10px) 0;
+			}
+			
+			#gamediv {
+				margin: 0 auto;
+				color: blueviolet;
+				text-shadow: -0.15vw 0.15vw 0.3vw black;
+			}
+			
+			.tile {
+				background-color: yellow;
+				border: 3px solid darkblue;
+				float: left;
+				border-radius: 20px;
+				text-align: center;
+				line-height: 5vw;
+				margin: 5px;
+				font-size: 3em;
+				position: relative;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="container">
+			<div id="textdiv">
+				<h1 id="head">Welcome!!!</h1>
+				<p id="para">Match the tiles!</p>
+			</div>
+			<div id="gamediv">
+				<div id="div0" class="tile"><div class="back">?</div></div>
+				<div id="div1" class="tile"><div class="back">?</div></div>
+				<div id="div2" class="tile"><div class="back">?</div></div>
+				<div id="div3" class="tile"><div class="back">?</div></div>
+				
+				<div class="fourdiv"></div>
+				
+				<div id="div4" class="tile"><div class="back">?</div></div>
+				<div id="div5" class="tile"><div class="back">?</div></div>
+				<div id="div6" class="tile"><div class="back">?</div></div>
+				<div id="div7" class="tile"><div class="back">?</div></div>
+					
+				<div class="fourdiv"></div>
+				<div class="eightdiv"></div>
+				
+				<div id="div8" class="tile"><div class="back">?</div></div>
+				<div id="div9" class="tile"><div class="back">?</div></div>
+				<div id="div10" class="tile"><div class="back">?</div></div>
+				<div id="div11" class="tile"><div class="back">?</div></div>
+					
+				<div class="fourdiv"></div>
+				
+				<div id="div12" class="tile"><div class="back">?</div></div>
+				<div id="div13" class="tile"><div class="back">?</div></div>
+				<div id="div14" class="tile"><div class="back">?</div></div>
+				<div id="div15" class="tile"><div class="back">?</div></div>
+					
+				<div class="fourdiv"></div>
+				<div class="eightdiv"></div>
+				
+				<div id="div16" class="tile"><div class="back">?</div></div>
+				<div id="div17" class="tile"><div class="back">?</div></div>
+				<div id="div18" class="tile"><div class="back">?</div></div>
+				<div id="div19" class="tile"><div class="back">?</div></div>
+					
+				<div class="fourdiv"></div>
+				
+				<div id="div20" class="tile"><div class="back">?</div></div>
+				<div id="div21" class="tile"><div class="back">?</div></div>
+				<div id="div22" class="tile"><div class="back">?</div></div>
+				<div id="div23" class="tile"><div class="back">?</div></div>
+					
+				<div class="break"></div>
+			</div>
+		</div>
+		
+		<script>
+			
+			// TILE LAYOUT ON SCREEN
+			
+			var textHeight = document.getElementById("textdiv").clientHeight;
+			var tiles = document.getElementsByClassName("tile");
+			var fours = document.getElementsByClassName("fourdiv");
+			var eights = document.getElementsByClassName("eightdiv");
+			var size;
+			
+			if (window.innerWidth>window.innerHeight) {
+				for (var i=0; i<eights.length; i++) {
+					eights[i].innerHTML="<div class='break'></div>";
+				}
+				textHeight = document.getElementById("textdiv").clientHeight;
+				for (var i=0; i<tiles.length; i++) {
+					size=(window.innerHeight-textHeight-18-30)/3;
+					tiles[i].style.paddingTop="calc(("+size+"px - 5vw) / 2)";
+					tiles[i].style.width=size + "px";
+					tiles[i].style.height="calc(("+size+"px + 5vw) / 2)";
+				}
+				document.getElementById('gamediv').style.width=(size+6+10)*8 + "px";
+				document.getElementById('gamediv').style.fontSize=(size/4) + "px";
+			} else {
+				for (var i=0; i<fours.length; i++) {
+					fours[i].innerHTML="<div class='break'></div>";
+				}
+				for (var i=0; i<tiles.length; i++) {
+					size=(window.innerWidth-textHeight-24-40)/4;
+					tiles[i].style.paddingTop="calc(("+size+"px - 5vw) / 2)";
+					tiles[i].style.width=size + "px";
+					tiles[i].style.height="calc(("+size+"px + 5vw) / 2)";
+				}
+				document.getElementById('gamediv').style.width=(size+6+10)*4 + "px";
+				document.getElementById('gamediv').style.fontSize=(size/4) + "px";
+				document.getElementById('head').style.paddingTop="0.67em";
+				document.getElementById('para').style.margin="1em 0";
+			}
+			
+			// RANDOMIZING IMAGE SIDE
+			
+			var defaultTileArray = new Array();
+			var randomTileArray = new Array();
+			var valueArray = new Array();
+			var x;
+			var i;
+			
+			defaultTileArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+			
+			for(i=11; i>=0; i--) {
+				x = Math.floor(Math.random()*(i+1));
+				randomTileArray[11-i] = defaultTileArray[x];
+				defaultTileArray.splice(x, 1);
+			}
+			
+			defaultTileArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+			
+			for(i=11; i>=0; i--) {
+				x = Math.floor(Math.random()*(i+1));
+				randomTileArray[23-i] = defaultTileArray[x];
+				defaultTileArray.splice(x, 1);
+			}
+			
+			for(i=0; i<=23; i++) {
+				valueArray[i] = 0;
+			}
+
+			for(i=0; i<=23; i++) {
+				document.getElementById("div" + i).onclick = flipTile(i);
+			}
+			
+			function flipTile(i) {
+				return function() {
+					if(valueArray[i]==0) {
+						document.getElementById("div" + i).innerHTML ="<img id='image"+i+"' style='position:absolute; left:"+size*(0.75/3.5)+"px; top:"+size*(0.75/3.5)+"px' src='gameimages/"+randomTileArray[i]+".svg' height='"+(size/1.75)+"px' alt="+i+" />";
+						valueArray[i] = 2;
+						console.log(valueArray);
+						checkTile(i);
+					}
+				};
+			}
+			
+			function checkTile(i) {
+				for(var j=0; j<=23; j++) {
+					if(valueArray[j]==1) {
+						if(randomTileArray[i]==randomTileArray[j]) {
+							valueArray[i]=3;
+							valueArray[j]=3;
+							break;
+						} else {
+							valueArray[i]=0;
+							valueArray[j]=0;
+							setTimeout( function(){
+								document.getElementById("div" + i).innerHTML ="?";
+								document.getElementById("div" + j).innerHTML ="?";}, 1000);
+							break;
+						}
+					}
+				}
+				if(valueArray[i]==2) {
+					valueArray[i]=1;
+				}
+			} 
+			
+		</script>
+	</body>
+</html>

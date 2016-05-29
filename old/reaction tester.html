@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Reaction Game</title>
+	
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<style>
+		
+			body {
+				font-family: Verdana, 'sans serif';
+			}
+			
+			h1 {
+				margin-bottom: 0;
+			}
+			
+			#box {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				display: none;
+				position: relative;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+			#descript {
+				float: left;
+			}
+			
+			#time_p {
+				float: right;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<div id="text">
+			<h1>Test your reactions!</h1>
+			<p id="descript">Click on the shapes as quickly as you can!</p>
+			<p id="time_p"><b>Your time: <span id="time">0</span>s</b></p>
+			<div class="break"></div>
+		</div>
+		
+		<div class="break"></div>
+		
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+						
+			var apearanceTime; var disapearanceTime; var reactionTime;
+			
+			
+			
+			var x;
+			var textHeight = document.getElementById("text").clientHeight;
+			
+			console.log(window.innerHeight);
+			console.log(window.innerWidth);
+			console.log(textHeight);
+			
+			function makeBox() {
+				setTimeout (function(){
+					
+					if (window.innerWidth>window.innerHeight) {
+						x =  0.15*window.innerWidth;
+						document.getElementById("box").style.height = x + "px";
+						document.getElementById("box").style.width =  x + "px";
+					} else {
+						x = 0.15*window.innerHeight;
+						document.getElementById("box").style.height = x + "px";
+						document.getElementById("box").style.width =  x + "px";
+					}
+					
+					document.getElementById("box").style.backgroundColor="#" + Math.floor(Math.random()*16777215).toString(16);
+					document.getElementById("box").style.top = Math.floor(Math.random()*(window.innerHeight-x-textHeight-25)) + "px";
+					document.getElementById("box").style.left = Math.floor(Math.random()*(window.innerWidth-x-15)) + "px";
+					document.getElementById("box").style.borderRadius = Math.floor(Math.random()*51)+"%";
+					/* Original code which was in place of the previous^ line:
+					
+					if (Math.random()>0.5) {
+						document.getElementById("box").style.borderRadius = "50%";
+					} else {
+						document.getElementById("box").style.borderRadius = "0%";
+					}
+					
+					*/
+					document.getElementById("box").style.display="block";
+					apearanceTime=Date.now();
+				}, 1000*Math.random());
+			}
+		
+			makeBox();
+	
+			document.getElementById("box").onclick = function() {
+				this.style.display="none";
+				disapearanceTime=Date.now();
+				
+				reactionTime=(disapearanceTime-apearanceTime)/1000;
+				document.getElementById("time").innerHTML = reactionTime;
+				makeBox();
+			}
+			
+			// setTimeout (alert("done"), 7000); WHY THIS NO WORK ??
+			// look up 'display' values
+			
+			
+			
+		</script>
+	</body>
+</html>

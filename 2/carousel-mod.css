@@ -1,0 +1,54 @@
+.carousel {
+	height: 155px;
+	height: 43.75vw;
+}
+
+.carousel .item {
+	height:155px;
+	height: 43.75vw;
+	background-color: #777;
+}
+.carousel-inner > .item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 155px;
+	height: 43.75vw;
+}
+
+@media (min-width: 768px) { 
+	.carousel {
+		height: 336px;
+	}
+	.carousel .item {
+		height: 336px;
+	}
+	.carousel-inner > .item > img {
+		height: 336px;
+	}
+}
+
+@media (min-width: 992px) { 
+	.carousel {
+		height: 434px;
+	}
+	.carousel .item {
+		height: 434px;
+	}
+	.carousel-inner > .item > img {
+		height: 434px;
+	}
+}
+
+@media (min-width: 1200px) { 
+	.carousel {
+		height: 490px;
+	}
+	.carousel .item {
+		height: 490px;
+	}
+	.carousel-inner > .item > img {
+		height: 490px;
+	}
+}

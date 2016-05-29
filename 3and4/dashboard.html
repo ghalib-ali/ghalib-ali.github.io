@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Food Delivery - Admin</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
+
+		<!-- Custom styles for this template -->
+		<link href="css/dashboard.css" rel="stylesheet">
+		
+		<style>
+			@font-face {
+				font-family: 'Lobster Two';
+				src: url('fonts/LobsterTwo-Bold.otf');
+				font-weight: bold;
+   				font-style: normal;
+			}
+			
+			@font-face {
+				font-family: 'social1';
+				src: url('fonts/Socialico.ttf');
+			}
+			
+			@font-face {
+				font-family: 'social2';
+				src: url('fonts/Socialico Plus.ttf');
+			}
+			
+			.socialico {
+				position: relative;
+				top: 1px;
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				font-size: 2em;
+			}
+			
+			.facebookico:before {
+				font-family: 'social1';
+				content: "f";
+			}
+			
+			.twitterico:before {
+				font-family: 'social1';
+				content: "l";
+			}
+			
+			.instaico:before {
+				font-family: 'social2';
+				content: "i";
+			}
+			
+			.navbar-default {
+				border: none;
+				background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-nav>li>a {
+				color: white;
+			}
+			
+			.navbar-default .navbar-brand {
+				font-family: 'Lobster Two', cursive;
+				font-weight: bold;
+				font-size: 2em;
+				//text-shadow: black 1px 2px;
+				color: white;
+				//background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-brand:hover {
+				color: lightgoldenrodyellow;
+			}
+			
+			.navbar-nav li {
+				text-align: right;
+				position: relative;
+				background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-toggle {
+				border-color: white;
+			}
+			
+			.navbar-toggle {
+				border-width: 2px;
+			}
+			
+			.navbar-default .navbar-toggle .icon-bar {
+				background-color: white;
+			}
+			
+			.footer {
+				background-color: #e7e7e7;
+				padding-top: 5px;
+			}
+			
+			.footerdown {
+				text-align: center;
+			}
+			
+			hr {
+				border-top-color: lightgrey;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+			.nav-sidebar > .active > a,
+			.nav-sidebar > .active > a:hover,
+			.nav-sidebar > .active > a:focus {
+				color: #fff;
+				background-color: crimson;
+			}
+			
+			@media (min-width: 768px) {
+				.navbar-default .navbar-brand {
+					///font-size: 4em;
+					text-shadow: black 1px 2px;
+					//height: 100px;
+					//padding-top: 35px;
+				}
+			}
+				
+			@media (max-width: 767px) {
+				.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+					color:#333;}
+				}
+		</style>
+		
+		<!--[if !IE]><!-->
+			<style>
+				.facebookico:before {
+					content: "f";
+				}
+
+				.twitterico:before {
+					content: "l";
+				}
+
+				.instaico:before {
+					content: "i";
+				}
+			</style>
+	 	<!--<![endif]-->
+		
+		<!--[if IE]>
+			<style>
+				.facebookico:before {
+					content: "";
+				}
+
+				.twitterico:before {
+					content: "";
+				}
+
+				.instaico:before {
+					content: "";
+				}
+			</style>
+		<![endif]-->
+		
+		<!-- This is for IE10+ -->
+		<style>
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				.facebookico:before {
+					content: "";
+				}
+
+				.twitterico:before {
+					content: "";
+				}
+
+				.instaico:before {
+					content: "";
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Food Delivery</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">Help</a></li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<input type="text" class="form-control" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+			  <ul class="nav nav-sidebar">
+				<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">Reports</a></li>
+				<li><a href="#">Analytics</a></li>
+				<li><a href="#">Export</a></li>
+			  </ul>
+			  <ul class="nav nav-sidebar">
+				<li><a href="">Nav item</a></li>
+				<li><a href="">Nav item again</a></li>
+				<li><a href="">One more nav</a></li>
+				<li><a href="">Another nav item</a></li>
+				<li><a href="">More navigation</a></li>
+			  </ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			  <h1 class="page-header">Dashboard</h1>
+
+		<div class="row">
+			<div class="col-xs-12">
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+				text text text text text text text text text text text text text text text text text text text text	text text text text text text text text text text text 
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text 
+				text text text text text text
+			</div>
+		</div>
+
+		<h2 class="sub-header">Section title</h2>
+
+		<div class="row placeholders">
+			<div class="col-sm-6 col-md-4 placeholder">
+				<img src="holder.js/200x200" class="img-responsive" alt="Generic placeholder thumbnail">
+				<h4>Label</h4>
+				<span class="text-muted">Something else</span>
+				<br />text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text
+			</div>
+			<div class="col-sm-6 col-md-4 placeholder">
+				<img src="holder.js/200x200" class="img-responsive" alt="Generic placeholder thumbnail">
+				<h4>Label</h4>
+				<span class="text-muted">Something else</span>
+				<br />text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text
+			</div>
+			<div class="col-sm-6 col-md-4 placeholder">
+				<img src="holder.js/200x200" class="img-responsive" alt="Generic placeholder thumbnail">
+				<h4>Label</h4>
+				<span class="text-muted">Something else</span>
+				<br />text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text text text text text<br />
+				text text text
+			</div>
+		</div>
+				
+			</div>
+		  </div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row footer">
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 footerdown">
+					<hr />
+					<p><small>&copy; 2015 Food Delivery</small><br />
+						<small><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></small></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<!--<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<!-- Just to make the placeholder images work.-->
+		<script src="js/holder.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>

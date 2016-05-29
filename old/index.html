@@ -1,0 +1,336 @@
+<!doctype html>
+<!-- bismillaah -->
+<html>
+	<head>
+		<title>Ghalib Ali - Web Developer</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			
+			@font-face {
+				font-family: 'existencelight';
+				src: url('fonts/Existence-Light-webfont.eot');
+				src: url('fonts/Existence-Light-webfont.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/Existence-Light-webfont.woff') format('woff'),
+					 url('fonts/Existence-Light-webfont.ttf') format('truetype'),
+					 url('fonts/Existence-Light-webfont.svg#existencelight') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+			
+			@font-face {
+				font-family: 'eraserregular';
+				src: url('fonts/EraserRegular-webfont.eot');
+				src: url('fonts/EraserRegular-webfont.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/EraserRegular-webfont.woff') format('woff'),
+					 url('fonts/EraserRegular-webfont.ttf') format('truetype'),
+					 url('fonts/EraserRegular-webfont.svg#eraserregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: black;
+				font-size: 1.5em;
+				font-family: 'eraserregular', 'existencelight', sans-serif;
+				color: lightgoldenrodyellow;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			#container {
+				position: relative;
+			}
+			
+			#maincontentsection {
+				max-width: 890px;
+				margin: 0 auto;
+				padding: 4.75vw;
+				position: relative;
+			}
+			
+			[class^="level"] {
+				width: 100%;
+				min-height: 250px;
+				position: relative;
+			}
+			
+			[class*="innerlevel"] {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				overflow: hidden;
+			}
+			
+			.bg_transparency {
+				background: -webkit-linear-gradient(
+					to right, 
+					#274527 0%, 
+					#274527 50%, 
+					#1a1a1a 50%, 
+					#1a1a1a 100%);
+				background: -moz-linear-gradient(
+					to right, 
+					#274527 0%, 
+					#274527 50%, 
+					#1a1a1a 50%, 
+					#1a1a1a 100%);
+				background: -ms-linear-gradient(
+					to right, 
+					#274527 0%, 
+					#274527 50%, 
+					#1a1a1a 50%, 
+					#1a1a1a 100%);
+				background: -o-linear-gradient(
+					to right, 
+					#274527 0%, 
+					#274527 50%, 
+					#1a1a1a 50%, 
+					#1a1a1a 100%);
+				background: linear-gradient(
+					to right, 
+					#274527 0%, 
+					#274527 50%, 
+					#1a1a1a 50%, 
+					#1a1a1a 100%);
+				opacity: 0.82;
+				z-index: 0;
+			}
+			
+			[class*="__1"] {
+				-webkit-border-radius: 6vw 6vw 6vw 0;
+				-khtml-border-radius: 6vw 6vw 6vw 0;
+				-moz-border-radius: 6vw 6vw 6vw 0;
+				-ms-border-radius: 6vw 6vw 6vw 0;
+				-o-border-radius: 6vw 6vw 6vw 0;
+				border-radius: 6vw 6vw 6vw 0;
+				background-position: center;
+			}
+			
+			.contents_1 {
+				padding: 1em;
+				z-index: 1;
+				position: relative;
+			}
+			
+			.contents_3 {
+				padding: 1em;
+				z-index: 1;
+				position: relative;
+			}
+			
+			.bg_img {
+				background-image: url(images/trees.jpg);
+			}
+			
+			h1 {
+				margin: 0;
+				padding: 0;
+				font-weight: 600;
+				font-size: 4em;
+				font-family: 'existencelight', sans-serif;
+				text-align: center;
+			}
+			
+			.subhead {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+			
+			.intro {
+				font-family: 'existencelight', sans-serif;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+			[class*="__3"] {
+				-webkit-border-radius: 0 6vw 0 6vw;
+				-khtml-border-radius: 0 6vw 0 6vw;
+				-moz-border-radius: 0 6vw 0 6vw;
+				-ms-border-radius: 0 6vw 0 6vw;
+				-o-border-radius: 0 6vw 0 6vw;
+				border-radius: 0 6vw 0 6vw;
+				background-position: right;
+			}
+			
+			[class*="__5"] {
+				-webkit-border-radius: 6vw 0 6vw 6vw;
+				-khtml-border-radius: 6vw 0 6vw 6vw;
+				-moz-border-radius: 6vw 0 6vw 6vw;
+				-ms-border-radius: 6vw 0 6vw 6vw;
+				-o-border-radius: 6vw 0 6vw 6vw;
+				border-radius: 6vw 0 6vw 6vw;
+				background-position: bottom;
+			}
+			
+			.level__1 {
+				
+				position: relative;
+			}
+			
+			.panediv {
+				height: 29.25vw;
+			}
+			
+			.panediv img {
+				opacity: 0.63;
+				height: 100%;
+				width: 100%;
+				z-index: 1;
+			}
+			
+			iframe {
+				position: absolute;
+				z-index: 0;
+				width: 85%;
+				height: calc(85% + 100px);
+				top: 15%;
+				left: 7.5%;
+				border: none;
+				overflow: hidden;
+			}
+			
+			.cssmapright {
+				height: 100%;
+				width: 28.45%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				-webkit-border-radius: 15vw 0 0 15vw;
+				-khtml-border-radius: 15vw 0 0 15vw;
+				-moz-border-radius: 15vw 0 0 15vw;
+				-ms-border-radius: 15vw 0 0 15vw;
+				-o-border-radius: 15vw 0 0 15vw;
+				border-radius: 15vw 0 0 15vw;
+			}
+			
+			.cssmapleft {
+				height: 100%;
+				width: 28.45%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				-webkit-border-radius: 0 15vw 15vw 0;
+				-khtml-border-radius: 0 15vw 15vw 0;
+				-moz-border-radius: 0 15vw 15vw 0;
+				-ms-border-radius: 0 15vw 15vw 0;
+				-o-border-radius: 0 15vw 15vw 0;
+				border-radius: 0 15vw 15vw 0;
+			}
+			
+			#clicktext {
+				font-family: 'eraserregular';
+				float: right;
+				transform: rotate(-9deg);
+				margin-right: 3%;
+				color: white;
+				font-size: 1.3em;
+			}
+			
+			.contents_1 img {
+				float: right;
+				margin-right: 5%;
+			}
+			
+			small {
+				font-size: 0.7em;
+			}
+			
+			.contents_3 {
+				position: absolute;
+				bottom: 0;
+				left: 3vw;
+			}
+			
+			.contents_5 img {
+				position: absolute;
+				bottom: 20px;
+				height:75px;
+			}
+			
+			#twitterbttn {
+				left: 3vw;
+			}
+			
+			#linkedinbttn {
+				margin-left: 50%;
+				left: -37.5px;
+			}
+			
+			#emailbttn {
+				right: 3vw;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="maincontentsection">
+				
+				<div class="level__1 bg_img">
+					<div class="bg_transparency innerlevel__1"></div>
+					<div class="contents_1">
+						<h1>Ghalib Ali</h1>
+						<p class="subhead intro">Web Developer</p>
+						
+						<p class="intro">This is my portfolio site where I will be showcasing some of my work.<br /> Feel free to look around. Everything in this site was designed and developed by me.*<br /> <small>*(Except the vector images and the photographs, I got those off of various sites that were offering images without copyright restrictions.)</small></p>
+						
+						<hr />
+						
+						<h2>STUFF I CAN MAKE:</h2>
+						<p>WEBPAGES USING HTML/CSS:</p>
+						<p>EXAMPLE:<br />
+						<br />
+						<span id="clicktext">Click Here</span></p>
+						<div class="break"></div>
+						<img src="images/arrow.png" alt="arrow" />
+					</div>
+				</div>
+				
+				<div class="level__2 panediv">
+					<div class="innerlevel__2">
+						<iframe src="news.html" scrolling="no"></iframe>
+						<img src="images/pane.png" alt="glass pane" />
+						<a href="news.html"><div class="cssmapright"></div></a>
+					</div>
+				</div>
+				
+				<div class="level__3 bg_img">
+					<div class="bg_transparency innerlevel__3"></div>
+					<div class="contents_3">
+						<p>JAVASCRIPT STUFF:</p>
+						<p>EXAMPLE:</p>
+					</div>
+				</div>
+				
+				<div class="level__4 panediv">
+					<div class="paneright innerlevel__4">
+						<iframe src="game.html" scrolling="no"></iframe>
+						<img src="images/pane2.png" alt="glass pane" />
+						<a href="game.html"><div class="cssmapleft"></div></a>
+					</div>
+				</div>
+				
+				<div class="level__5 bg_img">
+					<div class="bg_transparency innerlevel__5"></div>
+					<div class="contents_5 innerlevel__5">
+						<a href="http://twitter.com/ghalib_3li"><img id="twitterbttn" src="images/twitter.svg" alt="twitter" /></a>
+						<a href="http://www.linkedin.com/in/ghalibali"><img id="linkedinbttn" src="images/linkedin.svg" alt="linkedin" /></a>
+						<a href="mailto:ghalib@ghalibali.com"><img id="emailbttn" src="images/email.svg" alt="email" /></a>
+						<div class="break"></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

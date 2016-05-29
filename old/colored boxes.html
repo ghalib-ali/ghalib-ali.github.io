@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Random Colors</title>
+	
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<style>
+		
+			body {
+				font-family: Verdana, 'sans serif';
+				margin: 0;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="text">
+
+				<div class="break"></div>
+			</div>
+
+			<div class="break"></div>
+
+			<div id="box"></div>
+		</div>
+		<script type="text/javascript">
+			
+			var x; var hyt; var wid; var bgcolor; var toppos; var leftpos; var rad;
+			var textHeight = document.getElementById("text").clientHeight;
+			
+			console.log(textHeight);
+			
+			function makeBox() {
+				
+					if (window.innerWidth>window.innerHeight) {
+						x =  0.15*window.innerWidth;
+						hyt = x ;
+						wid =  x;
+					} else {
+						x = 0.15*window.innerHeight;
+						hyt = x;
+						wid =  x;
+					}
+					
+					hyt=Math.random()*hyt+ "px";
+					wid=hyt;
+					bgcolor="#" + Math.floor(Math.random()*16777215).toString(16);
+					toppos = Math.floor(Math.random()*(window.innerHeight-x-textHeight)) + "px";
+					leftpos = Math.floor(Math.random()*(window.innerWidth-x)) + "px";
+					rad = Math.floor(Math.random()*51)+"%";
+					document.getElementById("container").innerHTML=document.getElementById("container").innerHTML+"<div style='height:"+hyt+";width:"+wid+";background-color:"+bgcolor+";border-radius:"+rad+";position:absolute;top:"+toppos+";left:"+leftpos+"'></div>"
+
+			}
+		
+			
+			for(var i=0;i<=100;i++){
+				makeBox();
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Resthouse Hotel</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link href="carousel-mod.css" rel="stylesheet">
+		
+		<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
+		
+		<style>
+			@font-face {
+				font-family: 'Cinzel Decorative';
+				src: url('CinzelDecorative-Regular-webfont.eot');
+				src: url('CinzelDecorative-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+				url('CinzelDecorative-Regular-webfont.woff') format('woff'),
+				url('CinzelDecorative-Regular-webfont.ttf') format('truetype'),
+				url('CinzelDecorative-Regular-webfont.svg#cinzel_decorativeregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			@font-face {
+				font-family: 'Italianno';
+				src: url('Italianno-Regular-OTF.otf');
+			}
+			
+			body {
+				background-color: #1A0F0D;
+				background-image: url(images/back.jpg);
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			
+			.container {
+				background-color: white;
+			}
+			
+			.navbar-default {
+				border: none;
+				background-color: white;
+			}
+			
+			.navbar-nav li {
+				text-align: right;
+			}
+			
+			#navSelected, .navbar-nav li:hover {
+				border-color: #F8C45A;
+			}
+			
+			/* "Resthouse Hotel" logo text */
+			#logo {
+				text-align: center;
+				font-family: 'Cinzel Decorative', serif;
+				font-size: 2em;
+				color: black;
+			}
+			
+			/* positioning the 'key' image below logo text */
+			#logo img {
+				width: 195px;
+				position: relative;
+				left: -5px;
+				top: -5px;
+			}
+			
+			/* the tagline div */
+			#tagline {
+				text-align: center;
+				font-family: 'Italianno', serif;
+				font-size: 2em;
+				color: grey;
+				position: relative;
+				left: -2px;
+			}
+			
+			/* positioning the tagline text above the horizontal rule */
+			#tagline span {
+				position: relative;
+				background-color: white;
+				padding: 0 10px;
+			}
+			
+			/* styling the horizontal rule */
+			#tagline hr {
+				border-color: lightgray;
+				margin: 0;
+				position: relative;
+				top: 0.65em;
+			}
+			
+			/* =============== FONTS STYLES FOR TEXT =============== */
+			
+			body {
+				font-family: sans-serif;
+				color: #795951;
+			}
+			
+			h1, h2, h3 {
+				font-family: 'Cinzel Decorative', serif;
+			}
+			
+			#row3A h2 {
+				font-size: 1.2em;
+				//font-size: 1.864em;
+				//font-family: Italianno;
+			}
+			
+			#row3B h1 {
+				font-size: 1.7em;
+				margin-bottom: 5px;
+			}
+			
+			.imgCaption h3 {
+				margin: 15px 0;
+			}
+			
+			h2 {
+				margin-top: 13px;
+			}
+			
+			@media (min-width: 768px) {
+				h2 {
+					margin-top: 20px;
+				}
+			}
+			
+			/* ===================================================== */
+			
+			.row3ADiv {
+				position: relative;
+				text-align: center;
+				margin-top: 25px;
+			}
+			
+			#feature1, #feature2, #feature3 {
+				background-size: cover;
+				background-position: bottom;
+				height: 100px;
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#feature1 {
+				background-image: url(images/beach.jpg);
+			}
+			
+			#feature2 {
+				background-image: url(images/interior.jpg);
+			}
+			
+			#feature3 {
+				background-image: url(images/rooms.jpg);
+			}
+			
+			.border {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				border: 5px solid white;
+				opacity: 0.25;
+			}
+			
+			#row3B img {
+				width: 100%;
+			}
+			
+			.row3BImgDiv {
+				display: none;
+			}
+			
+			#row5 img {
+				width: 100%;
+			}
+			
+			#row5imgDiv1, #row5imgDiv2, #row5imgDiv3 {
+				position: relative;
+			}
+			
+			.back {
+				background-color: black;
+				opacity: 0.75;
+				position: absolute;
+				bottom: 0;
+				right: 0px;
+				left: 0px;
+				height: auto;
+			}
+			
+			.imgCaption {
+				color: white;
+				text-align: center;
+			}
+			
+			#row5imgDiv1, #row5imgDiv2, #row5imgDiv3 {
+				margin-bottom: 35px;
+				text-align: center;
+			}
+			
+			.row5wrapper {
+				position: relative;
+				max-width: 600px;
+				margin: auto;
+			}
+			
+			#row5imagesDiv, #row3B .col-md-6 {
+				padding: 0;
+			}
+			
+			.nav li a {
+				padding: 10px 5px;
+			}
+			
+			/* =================== RESPONSIVE CSS =================== */
+
+			@media (min-width: 400px) {
+				#logo {
+					font-size: 3em;
+				}
+
+				#logo img {
+					width: 292.5px;
+					position: relative;
+					left: -5px;
+					top: -25px;
+				}
+				
+				#tagline {
+					top: -1em;
+				}
+			}
+			
+			@media (min-width: 768px) {
+				.navbar .navbar-nav {
+					display: inline-block;
+					float: none;
+				}
+
+				.navbar .navbar-collapse {
+					text-align: center;
+				}
+
+				.navbar-nav li {
+					padding: 20px 7px 0 7px;
+					margin-bottom: 30px;
+					font-family: times;
+					font-size: 1.4em;
+					box-sizing: border-box;
+					border-top: 5px solid white;
+				}
+
+				.navbar-nav li:hover {
+					box-sizing: border-box;
+				}
+				
+				/* centered columns styles */
+				.row-centered {
+					text-align:center;
+				}
+				.col-centered {
+					display:inline-block;
+					float:none;
+					/* reset the text-align 
+					text-align:left; */
+					/* inline-block space fix */
+					margin-right:-4px;
+				}
+				
+				.row3ADiv {
+					width: 33%;
+					top: -50px;
+					margin-top: 0;
+				}
+				
+				#row3A {
+					margin-bottom: -25px;
+				}
+				
+				.row3BImgDiv {
+					display: block;
+				}
+				
+				#row3B {
+					padding: 0 8.33% 35px 8.33%;
+				}
+				
+				#row5HeadDiv {
+					margin-left: 60px;
+				}
+				
+			}
+			
+			@media (min-width: 992px) {
+				#logo {
+					font-size: 4em;
+				}
+
+				#logo img {
+					width: 390px;
+					position: relative;
+					left: -5px;
+					top: -25px;
+				}
+				
+				.row3ADiv {
+					width: 30%;
+				}
+				
+				#row3B {
+					padding: 0 8.33% 35px 8.33%;
+				}
+				
+				.row3BImgDiv {
+					padding: 5px 0 0 15px;;
+				}
+				
+				#row5 {
+					padding: 0 10px;
+				}
+				
+				#row5HeadDiv {
+					margin-left: 15px;
+				}
+				
+				#row5imagesDiv, #row3B .col-md-6 {
+					padding: 0 15px;
+				}
+
+			}
+			
+			@media (min-width: 1200px) {
+				.row3ADiv {
+					width: 25%;
+				}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="row" id="row1">
+			
+				<div class="navbar navbar-default">
+					<div class="navbar-header">
+						<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							Menu
+						</button>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li id="navSelected"><a href="#row1">Home</a></li>
+							<li><a href="#row1">Our Rooms</a></li>
+							<li><a href="#row2">Dining</a></li>
+							<li><a href="#row3A">Services</a></li>
+							<li><a href="#row3A">Local Attractions</a></li>
+							<li><a href="#row3A">Contact us</a></li>
+							<li><a href="#row3A">About</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="col-sm-12" id="logo">
+					Resthouse<br /><span>Hotel</span><br />
+					<img src="images/key.svg" alt="key" /><br />
+				</div>
+				
+				<div class="col-sm-4 col-sm-offset-4" id="tagline">
+					<hr /><span>Comfort &nbsp;and&nbsp; Excellence</span>
+				</div>
+				
+			</div>
+			
+			<div class="row" id="row2">
+				<hr />
+				<!-- Carousel ================================================== -->
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				
+					<!-- Indicators 
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol> -->
+					
+					<div class="carousel-inner" role="listbox">
+					
+						<div class="item active">
+							<img class="first-slide" src="images/slide-1.jpg" alt="First slide">
+						</div>
+						
+						<div class="item">
+							<img class="second-slide" src="images/slide-2.jpg" alt="Second slide">
+						</div>
+						
+						<div class="item">
+							<img class="third-slide" src="images/slide-3.jpg" alt="Third slide">
+						</div>
+						
+					</div>
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div><!-- /.carousel -->
+			</div>
+			
+			<div class="row row-centered" id="row3A">
+			
+				<div class="col-md-3 col-centered row3ADiv">
+					<div id="feature1">
+						<div class="border"></div>
+					</div>
+					<h2>Make a Reservation</h2>
+				</div>
+				
+				<div class="col-md-3 col-centered row3ADiv">
+					<div id="feature2">
+						<div class="border"></div>
+					</div>
+					<h2>Latest News &amp;&nbsp;&nbsp;Events</h2>
+				</div>
+				
+				<div class="col-md-3 col-centered row3ADiv">
+					<div id="feature3">
+						<div class="border"></div>
+					</div>
+					<h2>View the Rooms</h2>
+				</div>
+				
+			</div>
+			
+			<div class="row" id="row3B">
+				<div class="col-md-6">
+					<div class="col-sm-12">
+						<h1>Welcome to Resthouse Hotel</h1>
+					</div>
+					
+					<div class="col-sm-4 row3BImgDiv">
+						<img src="images/welcome.jpg" />
+					</div>
+					
+					<div class="col-sm-8">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="col-sm-12">
+						<h1>Rooms and Suites</h1>
+					</div>
+					
+					<div class="col-sm-4 row3BImgDiv">
+						<img src="images/suites.jpg" />
+					</div>
+					
+					<div class="col-sm-8">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" id="row5">
+			
+				<div class="col-sm-12" id="row5HeadDiv">
+					<h1>Our Rooms</h1>
+				</div>
+				<div class="col-sm-12" id="row5imagesDiv">
+					<div class="col-md-4" id="row5imgDiv1">
+						<div class="row5wrapper">
+							<img src="images/room1.jpg" />
+							<div class="back">
+								<div class="imgCaption">
+									<h3>Type A</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4" id="row5imgDiv2">
+						<div class="row5wrapper">
+							<img src="images/room3.jpg" />
+							<div class="back">
+								<div class="imgCaption">
+									<h3>Type B</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4" id="row5imgDiv3">
+						<div class="row5wrapper">
+							<img src="images/room2.jpg" />
+							<div class="back">
+								<div class="imgCaption">
+									<h3>Type C</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+		</div>
+		<script src="jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

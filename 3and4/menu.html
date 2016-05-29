@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Food Delivery</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
+				
+		<style>
+			//@font-face {
+				//font-family: 'Lobster Two';
+				//src: url('fonts/LobsterTwo-Bold.otf');
+				//font-weight: bold;
+   				//font-style: normal;
+			//}
+			
+			@font-face {
+				font-family: 'social1';
+				src: url('fonts/Socialico.ttf');
+			}
+			
+			@font-face {
+				font-family: 'social2';
+				src: url('fonts/Socialico Plus.ttf');
+			}
+			
+			.socialico {
+				position: relative;
+				top: 1px;
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				font-size: 2em;
+			}
+			
+			.facebookico:before {
+				font-family: 'social1';
+				content: "f";
+			}
+			
+			.twitterico:before {
+				font-family: 'social1';
+				content: "l";
+			}
+			
+			.instaico:before {
+				font-family: 'social2';
+				content: "i";
+			}
+			
+			body {
+				padding-top: 52px;
+			}
+			
+			.navbar-default {
+				border: none;
+				background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-nav>li>a {
+				color: white;
+			}
+			
+			.navbar-default .navbar-brand {
+				font-family: 'Lobster Two', cursive;
+				font-weight: bold;
+				font-size: 2em;
+				//text-shadow: black 1px 2px;
+				color: white;
+				//background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-brand:hover {
+				color: lightgoldenrodyellow;
+			}
+			
+			.navbar-nav li {
+				text-align: right;
+				position: relative;
+				background-color: #F30000;
+			}
+			
+			.navbar-default .navbar-toggle {
+				border-color: white;
+			}
+			
+			.navbar-toggle {
+				border-width: 2px;
+			}
+			
+			.navbar-default .navbar-toggle .icon-bar {
+				background-color: white;
+			}
+			
+			.topsection {
+				padding: 15px
+			}
+			
+			.topsection h2 {
+				margin-top: 2px;
+			}
+			
+			.topsection img {
+				height: 100px;
+				float: left;
+				padding-right: 15px;
+			}
+			
+			.panel.with-nav-tabs .panel-heading{
+				padding: 5px 5px 0 5px;
+			}
+			
+			.panel.with-nav-tabs .nav-tabs{
+				border-bottom: none;
+			}
+			
+			.menumarker {
+				position: relative;
+				top: -51px;
+			}
+			
+			.glyphicon-plus-sign {
+				font-size: 2em;
+				color: #F30000;
+			}
+			
+			.checkout {
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				margin-bottom: 15px;
+			}
+			
+			.checkout h3 {
+				text-align: center;
+			}
+			
+			.checkout .btn-primary {
+				background-color: #F30000;
+				border-color: #F30000;
+				margin-bottom: 15px;
+			}
+			
+			.checkout .btn-primary:hover {
+				background-color: darkred;
+				border-color: darkred;
+			}
+			
+			.footer {
+				background-color: #e7e7e7;
+				padding-top: 5px;
+			}
+			
+			.footer ul {
+				list-style-type: none;
+				margin-top: 10px;
+			}
+			
+			.footerSocial ul {
+				padding-left: 40px;
+			}
+			
+			.footerdown {
+				text-align: center;
+			}
+			
+			hr {
+				border-top-color: lightgrey;
+			}
+			
+			.break {
+				clear: both;
+			}
+			
+			.footerNonSocial,.footerSocial {
+				float:left;
+				width:50%;
+			}
+			
+			@media (min-width: 500px) {
+				.footerNonSocial,.footerSocial {
+					width:25%;
+				}
+				
+				.footerSocial ul {
+					padding: 0 20px;
+				}
+				
+				.footer .break {
+					clear: none;
+				}
+				
+				.topsection img {
+					height: 175px;
+				}
+			}
+			
+			@media (min-width: 900px) {
+				.footerNonSocial,.footerSocial {
+					width:20%;
+				}
+				
+				.footerSocial {
+					margin-left: 20%;
+				}
+			}
+			
+			@media (min-width: 1200px) {
+				.footerNonSocial{
+					width:17%;
+				}
+				
+				.footerSocial{
+					width:25%;
+				}
+				
+				.footerSocial {
+					margin-left: 24%;
+				}
+			}
+			
+			@media (min-width: 768px) {
+				.topnav {
+					top: 50px;
+				}
+				
+				.navbar-default .navbar-brand {
+					font-size: 4em;
+					text-shadow: black 1px 2px;
+					height: 100px;
+					padding-top: 35px;
+				}
+				
+				body {
+					padding-top: 100px;
+				}
+				
+				.menumarker {
+					position: relative;
+					top: -99px;
+				}
+			}
+				
+			@media (max-width: 767px) {
+				.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+					color:#333;}
+				}
+		</style>
+	
+		<!--[if !IE]><!-->
+			<style>
+				.facebookico:before {
+					content: "f";
+				}
+
+				.twitterico:before {
+					content: "l";
+				}
+
+				.instaico:before {
+					content: "i";
+				}
+			</style>
+	 	<!--<![endif]-->
+		
+		<!--[if IE]>
+			<style>
+				.facebookico:before {
+					content: "";
+				}
+
+				.twitterico:before {
+					content: "";
+				}
+
+				.instaico:before {
+					content: "";
+				}
+			</style>
+		<![endif]-->
+		
+		<!-- This is for IE10+ -->
+		<style>
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				.facebookico:before {
+					content: "";
+				}
+
+				.twitterico:before {
+					content: "";
+				}
+
+				.instaico:before {
+					content: "";
+				}
+			}
+		</style>
+	</head>
+	
+	<body>	
+		
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Food Delivery</a>
+				</div>
+
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="topnav"><a href="#">Live Chat Support <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
+						<li class="topnav"><a href="#">Help</a></li>
+						<li class="topnav"><a href="#">Sign Up</a></li>
+						<li class="topnav"><a href="#">Login</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 topsection">
+					<img src="images/foods/fish.jpg" />
+					<h2>Example Resturaunt</h2>
+					<p><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></p>
+					<p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Indian, Halal</p>
+					<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Example Road, Example Street</p>
+					<p><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Delivery Fee: &pound;3.99 - &pound;4.99</p>
+				</div>
+				<div class="break"></div>
+				<div class="col-sm-8">
+					<div class="panel with-nav-tabs panel-default">
+						<div class="panel-heading">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#tab1" data-toggle="tab">Menu</a></li>
+									<li><a href="#tab2" data-toggle="tab">Opening Hours &amp; Info</a></li>
+								</ul>
+						</div>
+						<div class="panel-body">
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="tab1">
+									
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											Menu Sections
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											<li><a href="#drinks">Drinks</a></li>
+											<li><a href="#appetisers">Appetisers</a></li>
+											<li><a href="#main">Main Dishes</a></li>
+											<li><a href="#rice">Rice</a></li>
+											<li><a href="#bread">Bread</a></li>
+											<li><a href="#deserts">Deserts</a></li>
+										</ul>
+									</div>
+									
+									<div class="menumarker" id="drinks"></div>
+									<h3>Drinks</h3>
+									<table class="table table-hover">
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Drink 1</td><td>&pound;0.50</td><td> <span class="glyphicon glyphicon-plus-sign" id="1" aria-hidden="true"></span></td></tr>
+										<tr><td>Drink 2</td><td>&pound;2.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="2" aria-hidden="true"></span></td></tr>
+										<tr><td>Drink 3</td><td>&pound;0.70</td><td> <span class="glyphicon glyphicon-plus-sign" id="3" aria-hidden="true"></span></td></tr>
+									
+										<tr><th><h3>Appetisers</h3></th><th class="menumarker" id="appetisers"></th><th></th></tr>
+									
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Appetiser 1</td><td>&pound;3.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="4" aria-hidden="true"></span></td></tr>
+										<tr><td>Appetiser 2</td><td>&pound;4.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="5" aria-hidden="true"></span></td></tr>
+										<tr><td>Appetiser 3</td><td>&pound;3.50</td><td> <span class="glyphicon glyphicon-plus-sign" id="6" aria-hidden="true"></span></td></tr>
+									
+										<tr><th><h3>Main Dishes</h3></th><th class="menumarker" id="main"></th><th></th></tr>
+										
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Main Dish 1</td><td>&pound;5.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="7" aria-hidden="true"></span></td></tr>
+										<tr><td>Main Dish 2</td><td>&pound;4.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="8" aria-hidden="true"></span></td></tr>
+										<tr><td>Main Dish 3</td><td>&pound;5.95</td><td> <span class="glyphicon glyphicon-plus-sign" id="9" aria-hidden="true"></span></td></tr>
+									
+										<tr><th><h3>Rice</h3></th><th class="menumarker" id="rice"></th><th></th></tr>
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Rice 1</td><td>&pound;5.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="10" aria-hidden="true"></span></td></tr>
+										<tr><td>Rice 2</td><td>&pound;3.55</td><td> <span class="glyphicon glyphicon-plus-sign" id="11" aria-hidden="true"></span></td></tr>
+										<tr><td>Rice 3</td><td>&pound;8.80</td><td> <span class="glyphicon glyphicon-plus-sign" id="12" aria-hidden="true"></span></td></tr>
+									
+										<tr><th><h3>Bread</h3></th><th class="menumarker" id="bread"></th><th></th></tr>
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Bread 1</td><td>&pound;1.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="13" aria-hidden="true"></span></td></tr>
+										<tr><td>Bread 2</td><td>&pound;2.50</td><td> <span class="glyphicon glyphicon-plus-sign" id="14" aria-hidden="true"></span></td></tr>
+										<tr><td>Bread 3</td><td>&pound;2.00</td><td> <span class="glyphicon glyphicon-plus-sign" id="15" aria-hidden="true"></span></td></tr>
+									
+										<tr><th><h3>Deserts</h3></th><th class="menumarker" id="deserts"></th><th></th></tr>
+										<tr><th>ITEM</th><th>PRICE</th><th></th></tr>
+										<tr><td>Desert 1</td><td>&pound;1.95</td><td> <span class="glyphicon glyphicon-plus-sign" id="16" aria-hidden="true"></span></td></tr>
+										<tr><td>Desert 2</td><td>&pound;2.50</td><td> <span class="glyphicon glyphicon-plus-sign" id="17" aria-hidden="true"></span></td></tr>
+										<tr><td>Desert 3</td><td>&pound;2.50</td><td> <span class="glyphicon glyphicon-plus-sign" id="18" aria-hidden="true"></span></td></tr>
+									</table>
+									
+								</div>
+								<div class="tab-pane fade" id="tab2">
+								
+									<h3>Opening Hours</h3>
+									<p>Monday - Friday</p>
+									<p>11:00 AM - 2:00 AM</p>
+									
+									<h3>Payment Info</h3>
+									<p>Delivery Fee: &pound;2.00 - &pound;5.00 </p>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 checkout">
+					<h3>My Delivery Order</h3>
+					<p>My Items</p>
+					<table class="table table-condensed">
+						<tr class="info"><th>Item</th><th>Qty</th><th>Price</th><th></th></tr>
+						<tr style="display:none;" class="01"><td>Drink 1</td><td>1</td><td>&pound;0.50</td><td><span class="glyphicon glyphicon-minus-sign" id="01"></span></td></tr>
+						<tr style="display:none;" class="02"><td>Drink 2</td><td>1</td><td>&pound;2.00</td><td><span class="glyphicon glyphicon-minus-sign" id="02"></span></td></tr>
+						<tr style="display:none;" class="03"><td>Drink 3</td><td>1</td><td>&pound;0.70</td><td><span class="glyphicon glyphicon-minus-sign" id="03"></span></td></tr>
+
+						<tr style="display:none;" class="04"><td>Appetiser 1</td><td>1</td><td>&pound;3.00</td><td><span class="glyphicon glyphicon-minus-sign" id="04"></span></td></tr>
+						<tr style="display:none;" class="05"><td>Appetiser 2</td><td>1</td><td>&pound;4.00</td><td><span class="glyphicon glyphicon-minus-sign" id="05"></span></td></tr>
+						<tr style="display:none;" class="06"><td>Appetiser 3</td><td>1</td><td>&pound;3.50</td><td><span class="glyphicon glyphicon-minus-sign" id="06"></span></td></tr>
+
+						<tr style="display:none;" class="07"><td>Main Dish 1</td><td>1</td><td>&pound;5.00</td><td><span class="glyphicon glyphicon-minus-sign" id="07"></span></td></tr>
+						<tr style="display:none;" class="08"><td>Main Dish 2</td><td>1</td><td>&pound;4.00</td><td><span class="glyphicon glyphicon-minus-sign" id="08"></span></td></tr>
+						<tr style="display:none;" class="09"><td>Main Dish 3</td><td>1</td><td>&pound;5.95</td><td><span class="glyphicon glyphicon-minus-sign" id="09"></span></td></tr>
+
+						<tr style="display:none;" class="010"><td>Rice 1</td><td>1</td><td>&pound;5.00</td><td><span class="glyphicon glyphicon-minus-sign" id="010"></span></td></tr>
+						<tr style="display:none;" class="011"><td>Rice 2</td><td>1</td><td>&pound;3.55</td><td><span class="glyphicon glyphicon-minus-sign" id="011"></span></td></tr>
+						<tr style="display:none;" class="012"><td>Rice 3</td><td>1</td><td>&pound;8.80</td><td><span class="glyphicon glyphicon-minus-sign" id="012"></span></td></tr>
+
+						<tr style="display:none;" class="013"><td>Bread 1</td><td>1</td><td>&pound;1.00</td><td><span class="glyphicon glyphicon-minus-sign" id="013"></span></td></tr>
+						<tr style="display:none;" class="014"><td>Bread 2</td><td>1</td><td>&pound;2.50</td><td><span class="glyphicon glyphicon-minus-sign" id="014"></span></td></tr>
+						<tr style="display:none;" class="015"><td>Bread 3</td><td>1</td><td>&pound;2.00</td><td><span class="glyphicon glyphicon-minus-sign" id="015"></span></td></tr>
+
+						<tr style="display:none;" class="016"><td>Desert 1</td><td>1</td><td>&pound;1.95</td><td><span class="glyphicon glyphicon-minus-sign" id="016"></span></td></tr>
+						<tr style="display:none;" class="017"><td>Desert 2</td><td>1</td><td>&pound;2.50</td><td><span class="glyphicon glyphicon-minus-sign" id="017"></span></td></tr>
+						<tr style="display:none;" class="018"><td>Desert 3</td><td>1</td><td>&pound;2.50</td><td><span class="glyphicon glyphicon-minus-sign" id="018"></span></td></tr>
+						<tr><td></td><td></td><td></td><td></td></tr>
+						<tr class="active"><th>Subtotal</th><th></th><th>&pound;0.00</th><th></th></tr>
+						<tr class="active"><td>Delivery Fee</td><td></td><td>&pound;0.49</td><th></th></tr>
+						<tr class="danger"><th>Total</th><th></th><th>&pound;0.49</th><th></th></tr>
+					</table>
+					<button type="submit" class="btn btn-default btn-lg btn-primary btn-block">Checkout</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row footer">
+				<div class="col-xs-12">
+					<div class="footerNonSocial">
+						<ul>
+							<li><small><b>Locations:</b></small></li>
+							<li><small><a href="#">Birmingham</a></small></li>
+							<li><small><a href="#">Glasgow</a></small></li>
+							<li><small><a href="#">Leeds</a></small></li>
+							<li><small><a href="#">Liverpool</a></small></li>
+							<li><small><a href="#">Manchester</a></small></li>
+							<li><small><a href="#">All Locations</a></small></li>
+						</ul>
+					</div>
+					<div class="footerNonSocial">
+						<ul>
+							<li><small><b>Cuisines:</b></small></li>
+							<li><small><a href="#">Indian</a></small></li>
+							<li><small><a href="#">Chinese</a></small></li>
+							<li><small><a href="#">Italian</a></small></li>
+							<li><small><a href="#">Halal</a></small></li>
+							<li><small><a href="#">Pizza</a></small></li>
+							<li><small><a href="#">Sushi</a></small></li>
+						</ul>
+					</div>
+					<div class="break"></div>
+					<div class="footerNonSocial">
+						<ul>
+							<li><small><a href="#">About Us</a></small></li>
+							<li><small><a href="#">Contacts</a></small></li>
+							<li><small><a href="#">Help &amp; Support</a></small></li>
+							<li><small><a href="#">FAQ</a></small></li>
+						</ul>
+					</div>
+					<div class="footerSocial">
+						<ul>
+							<li><small><a href="#"><span class="socialico facebookico"></span> Facebook Page</a></small></li>
+							<li><small><a href="#"><span class="socialico twitterico"></span> Twitter Page</a></small></li>
+							<li><small><a href="#"><span class="socialico instaico"></span> Instagram</a></small></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-12 footerdown">
+					<hr />
+					<p><small>&copy; 2015 Food Delivery</small><br />
+						<small><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></small></p>
+				</div>
+			</div>
+		</div>
+		<!--<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#1").click(function(){
+					$(".01").show();
+				});
+				$("#2").click(function(){
+					$(".02").show();
+				});
+				$("#3").click(function(){
+					$(".03").show();
+				});
+				$("#4").click(function(){
+					$(".04").show();
+				});
+				$("#5").click(function(){
+					$(".05").show();
+				});
+				$("#6").click(function(){
+					$(".06").show();
+				});
+				$("#7").click(function(){
+					$(".07").show();
+				});
+				$("#8").click(function(){
+					$(".08").show();
+				});
+				$("#9").click(function(){
+					$(".09").show();
+				});
+				$("#10").click(function(){
+					$(".010").show();
+				});
+				$("#11").click(function(){
+					$(".011").show();
+				});
+				$("#12").click(function(){
+					$(".012").show();
+				});
+				$("#13").click(function(){
+					$(".013").show();
+				});
+				$("#14").click(function(){
+					$(".014").show();
+				});
+				$("#15").click(function(){
+					$(".015").show();
+				});
+				$("#16").click(function(){
+					$(".016").show();
+				});
+				$("#17").click(function(){
+					$(".017").show();
+				});$("#18").click(function(){
+					$(".018").show();
+				});
+				
+				
+				
+				$("#01").click(function(){
+					$(".01").hide();
+				});
+				$("#02").click(function(){
+					$(".02").hide();
+				});
+				$("#03").click(function(){
+					$(".03").hide();
+				});
+				$("#04").click(function(){
+					$(".04").hide();
+				});
+				$("#05").click(function(){
+					$(".05").hide();
+				});
+				$("#6").click(function(){
+					$(".06").hide();
+				});
+				$("#07").click(function(){
+					$(".07").hide();
+				});
+				$("#08").click(function(){
+					$(".08").hide();
+				});
+				$("#09").click(function(){
+					$(".09").hide();
+				});
+				$("#010").click(function(){
+					$(".010").hide();
+				});
+				$("#011").click(function(){
+					$(".011").hide();
+				});
+				$("#012").click(function(){
+					$(".012").hide();
+				});
+				$("#013").click(function(){
+					$(".013").hide();
+				});
+				$("#014").click(function(){
+					$(".014").hide();
+				});
+				$("#015").click(function(){
+					$(".015").hide();
+				});
+				$("#016").click(function(){
+					$(".016").hide();
+				});
+				$("#017").click(function(){
+					$(".017").hide();
+				});$("#018").click(function(){
+					$(".018").hide();
+				});
+			});
+		</script>
+	</body>
+</html>

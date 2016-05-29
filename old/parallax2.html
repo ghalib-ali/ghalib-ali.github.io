@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Parallax</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		
+		<style>
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			[class^="bg__"] {
+				height: 50vh;
+				background-attachment: fixed;
+				background-position: center center;
+				background-size: cover;
+			}
+			
+			.bg__foo {
+  				background-image: url(images/cornleaf.jpg);
+			}
+
+			.bg__bar {
+				background-image: url(images/woodtexture.jpg);
+			}
+
+			.bg__baz {
+				background-image: url(images/treebark.jpg);
+			}
+
+			.bg__bazz {
+				height: 100vh;
+				background-image: url(images/roadway.jpg);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="parallax">
+			<div class="bg__foo"></div>
+			<div class="bg__bar"></div>
+			<div class="bg__baz"></div>
+			<div class="bg__bazz"></div>
+		</div>
+	</body>
+</html>
